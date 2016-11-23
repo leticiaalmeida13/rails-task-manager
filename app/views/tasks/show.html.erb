@@ -4,3 +4,7 @@
  difficulty: <%= @task.difficulty %><br>
  description: <%= @task.description %>
 </p>
+
+<%= link_to 'Edit this task', edit_task_path %> <br>
+
+<%= link_to 'Delete this task', task_path(@task), method: :delete, data:{confirm: "Sure?"}%>

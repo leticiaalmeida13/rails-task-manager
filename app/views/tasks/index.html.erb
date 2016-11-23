@@ -1,10 +1,10 @@
 <h2>Here's your current tasks</h2>
 <% @tasks.each do |task| %>
   <p>
-  Title: <strong><%= task.title %></strong> <br>
+  Title: <strong><%= link_to task.title, task_path(task) %></strong> <br>
   Difficulty: <%= task.difficulty %> <br>
   Description: <%= task.description %>
   </p>
 <% end %>
 
-<input action="/tasks/new" type="submit" value="Create new task">
+<%= link_to 'Create new task', new_task_path, class: 'btn btn-primary' %>

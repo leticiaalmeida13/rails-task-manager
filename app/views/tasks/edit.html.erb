@@ -1,0 +1,17 @@
+<h2>Edit your task</h2>
+
+<p>
+  <form action="/tasks/<%=@task.id%>" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <div class="form-group">
+      <label for="title"> Title: </label>
+      <input type="text" name="task[title]" value=<%= @task.title %>>
+    </div>
+    <label for="description">Description: </label> <br>
+    <textarea cols="60" rows="7" type="text" name="task[description]"></textarea>
+    <label for="difficulty">Difficulty: </label>
+    <input type="integer" name="task[difficulty]">
+
+    <input type="submit" value="Edit now">
+  </form>
+</p>
